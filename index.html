@@ -9,12 +9,27 @@
 <body>
     <header>
         <div class="logo">
+            <!-- 確保圖片路徑和檔案名稱正確 -->
             <img src="img/logo.png" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
+                <li class="dropdown">
+                    <a href="#">About</a>
+                    <ul class="dropdown-content">
+                        <li>Artists</li>
+                        <li>Price</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Service</a>
+                    <ul class="dropdown-content">
+                        <li>Hair Washing</li>
+                        <li>Cut + Styling</li>
+                        <li>Color</li>
+                        <li>Hair Donation</li>
+                    </ul>
+                </li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -23,42 +38,24 @@
     <div class="spacer"></div>
 
     <section class="main-banner">
+        <!-- 確保圖片路徑和檔案名稱正確 -->
         <img src="img/banner.png" alt="Main Banner">
     </section>
 
-    <section class="promotions">
-        <div class="promotion">
-            <img src="img/bundle-deal.png" alt="Bundle Deal">
-            <h3>Bundle Deal</h3>
-        </div>
-        <div class="promotion">
-            <img src="img/member-exclusive.png" alt="Member Exclusive">
-            <h3>Member Exclusive</h3>
-        </div>
-        <div class="promotion">
-            <img src="img/student-discount.png" alt="Student Discount">
-            <h3>Student Discount</h3>
-        </div>
-    </section>
-
     <footer>
-        <div class="location">
+        <div class="footer-content">
             <p>Milky Way Galaxy, Earth, Taiwan, Taipei</p>
-        </div>
-        <div class="hours">
-            <p>Mon - 11:00 AM - 7:30 PM</p>
-            <p>Tue - 11:00 AM - 7:30 PM</p>
-            <p>Wed - Closed</p>
-            <p>Thu - 11:00 AM - 7:30 PM</p>
-            <p>Fri - 11:00 AM - 9:30 PM</p>
-            <p>Sat - 9:00 AM - 9:30 PM</p>
-            <p>Sun - 9:00 AM - 9:30 PM</p>
-        </div>
-        <div class="map">
-            <img src="img/map.png" alt="Location Map">
-        </div>
-        <div class="copyright">
-            <p>Copyright © 2024 Privacy Policy</p>
+            <div class="working-hours">
+                <ul>
+                    <li>Mon: 11:00AM - 7:30PM</li>
+                    <li>Tue: 11:00AM - 7:30PM</li>
+                    <li>Wed: CLOSED</li>
+                    <li>Thu: 11:00AM - 7:30PM</li>
+                    <li>Fri: 11:00AM - 9:30PM</li>
+                    <li>Sat: 9:00AM - 9:30PM</li>
+                    <li>Sun: 9:00AM - 9:30PM</li>
+                </ul>
+            </div>
         </div>
     </footer>
 </body>
