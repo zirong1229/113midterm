@@ -36,11 +36,12 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    height: 100%; /* 使選單與導覽列高度一致 */
+    height: 100%;
     align-items: center;
 }
 
 nav ul li {
+    position: relative;
     margin: 0 20px;
 }
 
@@ -48,6 +49,36 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    min-width: 160px;
+}
+
+nav ul li .dropdown-content li {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+nav ul li .dropdown-content li:hover {
+    background-color: #ddd;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
 }
 
 .spacer {
@@ -65,52 +96,28 @@ nav ul li a {
     object-fit: cover;
 }
 
-.promotions {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 0;
-    background-color: #f0f0f0;
-    height: 300px; /* 預設促銷區域高度，依情況調整 */
-}
-
-.promotion {
-    text-align: center;
-}
-
-.promotion img {
-    width: 300px;
-    height: auto;
-}
-
-.promotion h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
 footer {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+footer .footer-content {
     display: flex;
-    justify-content: space-around;
-    padding: 40px;
-    background-color: #ddd;
-    height: 300px; /* 預設 footer 高度 */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-footer .location, footer .hours, footer .map {
-    width: 30%;
+footer .footer-content p {
+    font-size: 16px;
 }
 
-footer .map img {
-    width: 100%;
-    height: auto;
+footer .working-hours ul {
+    list-style: none;
 }
 
-footer .hours p {
+footer .working-hours li {
     margin-bottom: 5px;
-}
-
-footer .copyright {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #ccc;
-    font-size: 12px;
 }
