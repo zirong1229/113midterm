@@ -9,6 +9,7 @@ body {
     line-height: 1.6;
     max-width: 1440px;
     margin: 0 auto;
+    height: 1653px; /* 確保整個頁面總高度為 1653px */
 }
 
 header {
@@ -17,6 +18,7 @@ header {
     align-items: center;
     padding: 20px 0;
     background-color: #f0f0f0;
+    height: 168px; /* LOGO區高度 */
 }
 
 header .logo img {
@@ -27,13 +29,15 @@ header .logo img {
 nav {
     width: 100%;
     background-color: #ccc;
+    height: 50px; /* 導覽列高度 */
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 10px 0;
+    height: 100%; /* 使選單與導覽列高度一致 */
+    align-items: center;
 }
 
 nav ul li {
@@ -47,13 +51,17 @@ nav ul li a {
 }
 
 .spacer {
-    height: 50px;
+    height: 50px; /* 空白條高度 */
     background-color: #f0f0f0;
+}
+
+.main-banner {
+    height: 500px; /* 大圖片區域 */
 }
 
 .main-banner img {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -62,6 +70,7 @@ nav ul li a {
     justify-content: space-around;
     padding: 40px 0;
     background-color: #f0f0f0;
+    height: 300px; /* 預設促銷區域高度，依情況調整 */
 }
 
 .promotion {
@@ -83,6 +92,7 @@ footer {
     justify-content: space-around;
     padding: 40px;
     background-color: #ddd;
+    height: 300px; /* 預設 footer 高度 */
 }
 
 footer .location, footer .hours, footer .map {
