@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     max-width: 1440px;
     margin: 0 auto;
-    height: 1653px; /* 確保整個頁面總高度為 1653px */
+    height: 1653px;
 }
 
 header {
@@ -18,7 +18,7 @@ header {
     align-items: center;
     padding: 20px 0;
     background-color: #f0f0f0;
-    height: 168px; /* LOGO區高度 */
+    height: 168px;
 }
 
 header .logo img {
@@ -29,7 +29,7 @@ header .logo img {
 nav {
     width: 100%;
     background-color: #ccc;
-    height: 50px; /* 導覽列高度 */
+    height: 60px; /* 導覽列高度改為 60px */
 }
 
 nav ul {
@@ -60,12 +60,13 @@ nav ul li a:hover {
 nav ul li .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 60px; /* 下拉選單從導航列下方 60px 開始 */
     left: 0;
-    background-color: #f9f9f9;
+    background-color: white; /* 獨立的白色背景 */
     box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
     z-index: 1;
     min-width: 160px;
+    border: 1px solid #ddd; /* 增加邊框以區分選單 */
 }
 
 nav ul li .dropdown-content li {
@@ -82,12 +83,12 @@ nav ul li:hover .dropdown-content {
 }
 
 .spacer {
-    height: 50px; /* 空白條高度 */
+    height: 50px;
     background-color: #f0f0f0;
 }
 
 .main-banner {
-    height: 500px; /* 大圖片區域 */
+    height: 500px;
 }
 
 .main-banner img {
