@@ -83,7 +83,9 @@ nav ul li .dropdown-content li:hover {
     background-color: #ddd;
 }
 
-nav ul li:hover .dropdown-content {
+/* 關鍵修改：保持下拉選單顯示 */
+nav ul li:hover .dropdown-content, 
+nav ul li .dropdown-content:hover {
     display: block;
 }
 
