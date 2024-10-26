@@ -1,131 +1,139 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+{
+    margin: 0; /* 清除所有元素的外邊距 */
+    padding: 0; /* 清除所有元素的內邊距 */
+    box-sizing: border-box; /* 包括內邊距和邊框在內的寬度和高度計算方式 */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    max-width: 1440px;
-    margin: 0 auto;
-    height: 1653px;
+    font-family: Arial, sans-serif; /* 設定全局字體為 Arial，若無則使用 sans-serif 字體 */
+    line-height: 1.6; /* 設定行高，以增強可讀性 */
+    max-width: 1440px; /* 設定主體的最大寬度 */
+    margin: 0 auto; /* 自動水平居中 */
+    height: 1653px; /* 設定身體的高度 */
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    background-color: #f0f0f0;
-    height: 168px;
+    display: flex; /* 使用彈性盒模型 */
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 子元素在交叉軸上居中對齊 */
+    padding: 0px 0; /* 設定上下內邊距 */
+    background-color: #f0f0f0; /* 設定背景顏色 */
+    height: 150px; /* 設定標頭的高度 */
 }
 
 header .logo img {
-    width: 168px;
-    height: 168px;
+    width: 150px; /* 設定logo的寬度 */
+    height: 150px; /* 設定logo的高度 */
 }
 
 nav {
-    width: 100%;
-    background-color: #ccc;
-    height: 60px; /* 導覽列高度改為 60px */
+    width: 100%; /* 導覽列寬度佔滿全寬 */
+    background-color: #ccc; /* 設定導覽列的背景顏色 */
+    height: 60px; /* 導覽列高度設定為60px */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    height: 100%;
-    align-items: center;
+    display: flex; /* 使用彈性盒模型以排列表項 */
+    justify-content: center; /* 水平居中對齊列表項 */
+    list-style: none; /* 移除列表項的預設樣式 */
+    margin: 0; /* 移除外邊距 */
+    padding: 0; /* 移除內邊距 */
+    height: 100%; /* 設定ul的高度為100%以佔滿導覽列 */
+    align-items: center; /* 垂直居中對齊列表項 */
 }
 
 nav ul li {
-    position: relative;
-    margin: 0 20px;
+    position: relative; /* 設定相對定位以支持絕對定位的下拉選單 */
+    margin: 0 30px; /* 左右外邊距 */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px;
+    text-decoration: none; /* 移除連結的下劃線 */
+    color: #333; /* 設定文字顏色 */
+    font-weight: bold; /* 設定字體為粗體 */
+    padding: 8px 50px; /* 設定內邊距，讓連結有更多空間 */
+    display: block; /* 確保a標籤佔滿li標籤 */
 }
 
 nav ul li a:hover {
-    background-color: #ddd;
-    border-radius: 5px;
+    background-color: #ddd; /* 滑鼠懸停時變更背景顏色 */
+    border-radius: 0px; /* 設定圓角 */
 }
 
-nav ul li .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 60px; /* 下拉選單從導航列下方 60px 開始 */
-    left: 0;
+
+/* 下拉選單樣式 */
+nav ul li > ul {
+    display: none; /* 預設隱藏下拉選單 */
+    position: absolute; /* 絕對定位以便於定位 */
+    top:  42px; /* 將下拉選單放置在導航列下方 */
+    left: 0; /* 將下拉選單對齊到左邊 */
     background-color: white; /* 獨立的白色背景 */
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-    z-index: 1;
-    min-width: 160px;
-    border: 1px solid #ddd; /* 增加邊框以區分選單 */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* 調整陰影效果 */
+    z-index: 1; /* 設定層級以保證下拉選單在上層 */
+    min-width: 120px; /* 設定下拉選單的最小寬度 */
+    
 }
 
-nav ul li .dropdown-content li {
-    padding: 10px;
-    white-space: nowrap;
+nav ul li:hover > ul {
+    display: block; /* 當滑鼠懸停時顯示下拉選單 */
 }
 
-nav ul li .dropdown-content li a {
-    color: #333;
-    text-decoration: none;
+nav ul li ul li {
+    background-color: white; /* 確保每個下拉選單項有背景色 */
+    padding: 5px 10px; /* 調整內邊距使選單項目更加緊湊 */
+    margin: 0; /* 移除外邊距 */
+    white-space: nowrap; /* 防止文本換行 */
 }
 
-nav ul li .dropdown-content li:hover {
-    background-color: #ddd;
+nav ul li ul li a {
+    color: #333; /* 設定下拉選單連結的文字顏色 */
+    text-decoration: none; /* 移除下劃線 */
 }
 
-/* 關鍵修改：保持下拉選單顯示 */
-nav ul li:hover .dropdown-content, 
-nav ul li .dropdown-content:hover {
-    display: block;
+nav ul li ul li:hover {
+    background-color: #ddd; /* 滑鼠懸停下拉選單項目時變更背景顏色 */
 }
 
 .spacer {
-    height: 50px;
-    background-color: #f0f0f0;
+    height: 80px; /* 設定間距的高度 */
+    background-color: #f0f0f0; /* 設定背景顏色 */
 }
 
 .main-banner {
-    height: 500px;
+    height: 500px; /* 設定主標題橫幅的高度 */
 }
 
 .main-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* 設定圖片寬度為100%以適應容器 */
+    height: 100%; /* 設定圖片高度為100%以適應容器 */
+    object-fit: cover; /* 圖片保持比例並填滿容器 */
 }
 
 footer {
-    margin-top: 20px;
-    background-color: #f0f0f0;
-    padding: 20px;
+    margin-top: 20px; /* 設定上方外邊距 */
+    background-color: #f0f0f0; /* 設定背景顏色 */
+    padding: 20px; /* 設定內邊距 */
 }
 
 footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1440px;
-    margin: 0 auto;
+    display: flex; /* 使用彈性盒模型 */
+    justify-content: space-between; /* 子元素之間均勻分配空間 */
+    align-items: flex-start; /* 讓子元素在交叉軸上對齊到上方 */
+    max-width: 1440px; /* 設定最大寬度 */
+    margin: 0 auto; /* 自動水平居中 */
 }
 
 footer .footer-content p {
-    font-size: 16px;
+    font-size: 16px; /* 設定文字大小 */
 }
 
 footer .working-hours ul {
-    list-style: none;
+    list-style: none; /* 移除預設樣式 */
 }
 
 footer .working-hours li {
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* 設定列表項之間的下邊距 */
 }
