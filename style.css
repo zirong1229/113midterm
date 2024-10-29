@@ -294,8 +294,28 @@ button {
     justify-content: space-between;
     width: 95%;
     max-width: 1400px;
-    margin-top: 0px;
+    margin-top: 0;
+    gap: 20px; /* 添加間距，避免內容擠在一起 */
+    flex-wrap: wrap; /* 允許項目在空間不足時自動換行 */
 }
+
+/* 當視窗寬度小於 768px 時，改為垂直排列 */
+@media (max-width: 768px) {
+    .hours-box {
+        flex-direction: column; /* 改為垂直排列 */
+        align-items: center; /* 居中對齊 */
+    }
+
+    .hours-image, .hours-content {
+        width: 100%; /* 每個項目寬度設為100% */
+        max-width: none; /* 移除最大寬度限制 */
+    }
+
+    .hours-content ul {
+        margin-right: 0; /* 移除右邊距 */
+    }
+}
+
 
 /* 地圖圖片樣式 */
 .hours-image {
