@@ -292,7 +292,7 @@ button {
 .hours-box {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 95%;
     max-width: 1400px;
     margin-top: 0px;
 }
