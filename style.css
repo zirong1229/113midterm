@@ -276,7 +276,7 @@ input[type="radio"]#slide3:checked ~ .nav label[for="slide3"] {
 
 /* 促銷圖片佔位符的樣式 */
 .offer-image {
-    width: 200px;                       /* 設置圖片的寬度 */
+    width: 300px;                       /* 設置圖片的寬度 */
     height: 200px;                      /* 設置圖片的高度 */
     background-color: #ccc;             /* 設置圖片佔位符的背景顏色 */
     background-size: cover;             /* 確保背景圖片覆蓋整個框 */
