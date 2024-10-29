@@ -324,9 +324,10 @@ button {
 }
 
 .hours-image iframe {
-    width: 100%;                     /* iframe的寬度100% */
+    width: 960px;                     /* iframe的寬度100% */
     height: 300px;                  /* 高度可以根據需要調整 */
     border: 0;                      /* 去掉邊框 */
+    overflow: hidden;
 }
 
 
