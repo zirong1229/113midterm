@@ -275,11 +275,10 @@ button {
     cursor: pointer;
 }
 
-/* 營業時間 */
+/* 營業時間區塊 */
 .opening-hours {
     width: 100%;
     max-width: 1920px;
-    height: 400px;
     background-color: #cccccc;
     display: flex;
     flex-direction: column;
@@ -288,34 +287,16 @@ button {
     align-items: center;
 }
 
-/* 兩個內容盒子 */
+/* 營業時間的兩個內容盒子 */
 .hours-box {
     display: flex;
-    justify-content: space-between;
-    width: 95%;
+    justify-content: center; /* 使內容集中於中間 */
+    width: 100%;
     max-width: 1400px;
-    margin-top: 0;
-    gap: 20px; /* 添加間距，避免內容擠在一起 */
-    flex-wrap: wrap; /* 允許項目在空間不足時自動換行 */
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
 }
-
-/* 當視窗寬度小於 768px 時，改為垂直排列 */
-@media (max-width: 768px) {
-    .hours-box {
-        flex-direction: column; /* 改為垂直排列 */
-        align-items: center; /* 居中對齊 */
-    }
-
-    .hours-image, .hours-content {
-        width: 100%; /* 每個項目寬度設為100% */
-        max-width: none; /* 移除最大寬度限制 */
-    }
-
-    .hours-content ul {
-        margin-right: 0; /* 移除右邊距 */
-    }
-}
-
 
 /* 地圖圖片樣式 */
 .hours-image {
@@ -331,22 +312,13 @@ button {
     border: 0;
 }
 
-
-/* 營業時間內容樣式 */
+/* 時間列表區塊樣式 */
 .hours-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    width: 35%; /* 占總寬度的30% */
     max-width: 960px;
+    margin-right: auto; /* 向右對齊 */
 }
 
-/* 營業時間列表樣式 */
-.hours-content ul {
-    list-style-type: none; /* 去除列表標記 */
-    line-height: 2.5;
-    overflow: hidden;
-}
 
 
 /* 標題樣式 */
@@ -354,6 +326,19 @@ button {
     margin: 0;
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* 當視窗寬度小於 768px 時，自動切換為垂直排列 */
+@media (max-width: 768px) {
+    .hours-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hours-image,
+    .hours-content {
+        width: 100%; /* 設定每個項目寬度為100% */
+    }
 }
 
 /* 底部 */
