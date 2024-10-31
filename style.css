@@ -279,7 +279,7 @@ button {
 .opening-hours {
     width: 100%;
     max-width: 1920px;
-    background-color: #cccccc;
+    background-color: #EBEBEB;
     display: flex;
     flex-direction: column;
     padding: 1rem;
