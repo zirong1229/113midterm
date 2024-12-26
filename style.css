@@ -156,6 +156,11 @@ nav ul li ul li:hover {
     font-family: serif;
     text-align: center;
 }
+/* 間距 */
+.spacer {
+    height: 45px;
+    background-color: #FFFFFF;
+}
 
 }
 
@@ -267,6 +272,11 @@ input:checked ~ .menu {
     padding: 0 15px;
   }
 }
+/* 間距 */
+.spacer {
+    height: 45px;
+    background-color: #FFFFFF;
+}
 	
 }
 
@@ -321,7 +331,7 @@ input:checked ~ .menu {
 @media (min-width: 500px) {
 /* 主標題橫幅 */
 .main-banner {
-    height: 600px;
+    max-height: 600px;
 }
 
 .main-banner img {
