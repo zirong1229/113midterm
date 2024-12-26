@@ -156,11 +156,6 @@ nav ul li ul li:hover {
     font-family: serif;
     text-align: center;
 }
-/* 間距 */
-.spacer {
-    height: 45px;
-    background-color: #FFFFFF;
-}
 
 }
 
@@ -272,11 +267,6 @@ input:checked ~ .menu {
     padding: 0 15px;
   }
 }
-/* 間距 */
-.spacer {
-    height: 45px;
-    background-color: #FFFFFF;
-}
 	
 }
 
@@ -285,6 +275,7 @@ input:checked ~ .menu {
     height: 45px;
     background-color: #FFFFFF;
 }
+/* 小於 500px 的媒體查詢 */
 @media (max-width: 500px) {
 	/* 主標題橫幅 */
 .main-banner {
@@ -328,16 +319,18 @@ input:checked ~ .menu {
 }
 	
 }
+/* 大於 500px 的媒體查詢 */
 @media (min-width: 500px) {
 /* 主標題橫幅 */
 .main-banner {
-    max-height: 600px;
+    height: 600px;
 }
 
 .main-banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+	overflow:hidden;
 }
 
 /* 圖片自動輪播 */
@@ -356,6 +349,7 @@ input:checked ~ .menu {
     background-position: center;
     opacity: 0;
     animation: slide-animation 15s infinite;
+	overflow:hidden;
 }
 
 .slide:nth-child(1) {
