@@ -7,24 +7,56 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
     max-width: 100%;
     margin: 0 auto;
     height: 1570px;
 }
 .nav-title a {
     color: inherit;          /* 使用父元素的顏色 */
-    text-decoration: none;   /* 移除底線 */
-}
+    text-decoration: none;/* 移除底線 */
+	font-family:serif ;
 
-/* 導覽列 */
+}
+/* 大於 800px 的媒體查詢 */
+@media screen and (min-width: 800px) {
+    label {
+        display: none;
+    }
+	
+	   	/* 隱藏 checkbox */
+    input[type="checkbox"] {
+    display: none;
+    }
+	.menu{
+		display: none;
+	}
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav ul li {
+        position: relative;
+    }
+
+    nav ul li > ul {
+        display: none;
+        position: absolute;
+    }
+
+    nav ul li:hover > ul {
+        display: block;
+    }
+	/* 導覽列 */
 header {
     position: relative;
     max-width: 100%;
     width: 100%;
     height: 150px;
     margin: 0 auto;
-    background-color: #b0acac;
+    background-color: #DABEA7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,23 +92,38 @@ nav ul li a {
     font-weight: bold;
     padding: 8px 50px;
     display: block;
+    position: relative;
+    transition: color 0.3s ease; /* 加入過渡效果 */
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
-    border-radius: 0px;
+/* Hover 畫線動畫 */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #666; /* 灰色畫線 */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* 畫線動畫效果 */
 }
 
-/* 下拉選單 */
+nav ul li a:hover::after {
+    width: 80%; /* 畫線展開至 80% */
+}
+
+/* 子選單 */
 nav ul li > ul {
     display: none;
     position: absolute;
-    top: 42px;
+    top: 47px;
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 nav ul li:hover > ul {
@@ -99,7 +146,6 @@ nav ul li ul li:hover {
     background-color: #ddd;
 }
 
-/* 導覽列標題和左右連結 */
 .nav-title {
     position: absolute;
     top: 32px;
@@ -111,36 +157,117 @@ nav ul li ul li:hover {
     text-align: center;
 }
 
-.nav-links {
-    position: absolute;
-    left: 20px;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-.nav-links li {
-    margin: 0 15px;
+
+/* 小於 800px 的媒體查詢 */
+@media screen and (max-width: 800px) {
+    label {
+        display: block;
+    }
+	
+   	/* 隱藏 checkbox */
+    input[type="checkbox"] {
+    display: none;
+    }
+	.dropdown-menu{
+		display: none;
+	}
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        text-align: left;
+    }
+	
+	nav {
+  background: #ccc;
+  box-shadow: 0px 1px 3px #00000088;
+}
+nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+nav h1 {
+  float: left;
+  padding-left: 50px;
+  line-height: 50px;
 }
 
-.nav-right {
-    position: absolute;
-    right: 20px;
-    top: 105px;
-    display: flex;
-    align-items: center;
+/* 隱藏 checkbox */
+input {
+  display: none;
 }
 
-.nav-right .icon {
-    margin-right: 10px;
+/* 漢堡按鈕 */
+label {
+  float: right;
+  padding-right: 50px;
+  line-height: 50px;
+  cursor: pointer;
+}
+label img {
+  width: 30px;
+  vertical-align: middle;
 }
 
-.nav-right .book-btn {
-    background-color: #d0d0d0;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
+/* menu*/
+.menu {
+  clear: both;
+  background: #fff;
+}
+.menu li {
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+.menu li a {
+  display: block;
+  line-height: 50px;
+  font-size: 18px;
+  color: #5d5d5d;
+  text-decoration: none;/* 移除底線 */
+}
+.menu li a:hover {
+  background: #5d5d5d;
+  color: #fff;
+}
+
+/* 下拉選單效果 */
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s;
+  /* 動畫秒數 */
+}
+
+input:checked ~ .menu {
+  max-height: 900px;
+}
+
+/* mediaquery */
+@media screen and (min-width: 800px) {
+  label {
+    display: none;
+  }
+
+  .menu {
+    float: right;
+    clear: none;
+    max-height: 50px;
+    background: #eee;
+  }
+  .menu li {
+    display: inline-block;
+  }
+  .menu li a {
+    padding: 0 15px;
+  }
+}
+	
 }
 
 /* 間距 */
@@ -148,7 +275,50 @@ nav ul li ul li:hover {
     height: 45px;
     background-color: #FFFFFF;
 }
+@media (max-width: 500px) {
+	/* 主標題橫幅 */
+.main-banner {
+    height: 200px;
+}
 
+.main-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 圖片自動輪播 */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slide-animation 15s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 10s;
+}
+	
+}
+@media (min-width: 500px) {
 /* 主標題橫幅 */
 .main-banner {
     height: 600px;
@@ -189,7 +359,7 @@ nav ul li ul li:hover {
 .slide:nth-child(3) {
     animation-delay: 10s;
 }
-
+}
 @keyframes slide-animation {
     0% { opacity: 0; }
     10% { opacity: 1; }
@@ -198,48 +368,17 @@ nav ul li ul li:hover {
     100% { opacity: 0; }
 }
 
+
+
 /* 隱藏 radio 按鈕 */
-.carousel input[type="radio"] {
-    display: none;
-}
 
 /* 顯示不同圖片的選擇 */
-#slide1:checked ~ .slides {
-    transform: translateX(0%);
-}
-#slide2:checked ~ .slides {
-    transform: translateX(-100%);
-}
-#slide3:checked ~ .slides {
-    transform: translateX(-200%);
-}
 
 /* 底部圓點導航 */
-.nav {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
 
-.nav label {
-    width: 15px;
-    height: 15px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-input[type="radio"]#slide1:checked ~ .nav label[for="slide1"],
-input[type="radio"]#slide2:checked ~ .nav label[for="slide2"],
-input[type="radio"]#slide3:checked ~ .nav label[for="slide3"] {
-    background-color: #333;
-}
-
-/* 促銷區域的容器 */
+/* 當視窗寬度大於 800px*/
+@media (min-width: 800px) {
+	/* 促銷區域的容器 */
 .offers {
     display: flex;
     justify-content: space-around;
@@ -270,84 +409,168 @@ input[type="radio"]#slide3:checked ~ .nav label[for="slide3"] {
     background-position: center;
     margin-bottom: 30px auto;
     border: 1px solid #999;
+    transition: transform 0.3s ease-in-out; /* 平滑過渡效果 */
 }
 
-/* 每個促銷項目下方按鈕的樣式 */
+/* 滑鼠懸停時放大 */
+.offer-image:hover {
+    transform: scale(1.1); /* 放大 10% */
+}
+
+/* button初始樣式 */
 button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
+    background: linear-gradient(45deg, #F5F5DC, #BEBEBE); /* 米色到灰色的漸層 */
+    color: #333; /* 字體使用深灰色，保持柔和 */
+    border: none;
+    border-radius: 5px; /* 圓角設計 */
+    transition: background-position 0.5s ease, box-shadow 0.3s ease; /* 平滑過渡效果 */
+    background-size: 200%; /* 動態漸層效果 */
+    background-position: left; /* 初始漸層位置 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 增加輕微陰影 */
 }
 
+/* 滑鼠懸停時漸層移動和陰影強化 */
+button:hover {
+    background-position: right; /* 漸層從左移到右 */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* 加強陰影效果 */
+}
+}
 
-
-/* 營業時間區塊 */
-.opening-hours {
-	height: 600px;
-    width: 100%;
+/* 當視窗寬度小於 800px,圖片垂直排列*/
+@media (max-width: 800px) {
+	/* 促銷區域的容器 */
+.offers {
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFFFFF;
     max-width: 100%;
-    background-color: #EBEBEB;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem; /* 調整 padding 以減少間距 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    align-items: center;
+    margin: 0 auto;
+  
 }
-/* 營業時間的兩個內容盒子 */
-.hours-box {
-    display: flex;
-    justify-content: center; /* 使內容集中於中間 */
-    width: 100%;
-	height: 500px;
-    max-width: 90%;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-/* 地圖圖片樣式 */
-.hours-image {
-    width: 50%;
-	height: 450px;
-    max-width: 960px;
-    margin-right: 40px;
-    overflow: hidden;
-}
-
-.hours-image iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-}
-
-/* 時間列表區塊樣式 */
-.hours-content {
-    width: 35%;/* 占總寬度的30% */
-	max-width: 960px;
-	hrigh: 450px;
-    margin-right: auto; /* 向右對齊 */
-}
-
-
-
-/* 標題樣式 */
-.opening-hours h2 {
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-/* 當視窗寬度小於 768px 時，自動切換為垂直排列 */
-@media (max-width: 768px) {
-    .hours-box {
+	    .offers {
         flex-direction: column;
         align-items: center;
     }
 
-    .hours-image,
-    .hours-content {
-        width: 100%; /* 設定每個項目寬度為100% */
+    .offers,
+    .offer {
+        width: 80%; /* 設定每個項目寬度為100% */
     }
+
+/* 每個促銷項目的樣式 */
+.offer {
+    width: 80%;
+	height: 35%;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* 促銷標題的樣式 */
+.offer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 促銷圖片佔位符的樣式 */
+.offer-image {
+    width: 100%;
+    height: 50%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px auto;
+    border: 1px solid #999;
+    transition: transform 0.3s ease-in-out; /* 平滑過渡效果 */
+}
+
+/* 滑鼠懸停時放大 */
+.offer-image:hover {
+    transform: scale(1.01); /* 放大 10% */
+}
+
+/* button初始樣式 */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(45deg, #F5F5DC, #BEBEBE); /* 米色到灰色的漸層 */
+    color: #333; /* 字體使用深灰色，保持柔和 */
+    border: none;
+    border-radius: 5px; /* 圓角設計 */
+    transition: background-position 0.5s ease, box-shadow 0.3s ease; /* 平滑過渡效果 */
+    background-size: 200%; /* 動態漸層效果 */
+    background-position: left; /* 初始漸層位置 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 增加輕微陰影 */
+}
+
+/* 滑鼠懸停時漸層移動和陰影強化 */
+button:hover {
+    background-position: right; /* 漸層從左移到右 */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* 加強陰影效果 */
+}
+}
+
+/* 營業時間區塊 */
+@media (min-width: 800px) {
+.opening{
+   heigh:300px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-around;
+    background-color: #EBEBEB;
+    display: flex;
+}
+/* 營業時間的兩個內容盒子 */
+.open {
+	max-width: 400px;
+    width: 60%;
+    height: 50%;
+    background-color:  #EBEBEB;
+    background-size: cover;
+    background-position: center;
+    padding-top:30px;
+    padding-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+    border: 0px solid #999;
+}
+
+}
+
+@media (max-width: 800px) {
+.opening {
+        flex-direction: column;
+        align-items: center;
+    }
+
+.open {
+        width: 80%; /* 設定每個項目寬度為100% */
+    }
+.opening{
+    heigh:300px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-around;
+    background-color: #EBEBEB;
+    display: flex;
+}
+/* 營業時間的兩個內容盒子 */
+.open {
+    max-width: 400px;
+    width: 60%;
+    height: 50%;
+    background-color: #EBEBEB;
+    background-size: cover;
+    background-position: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 0px solid #999;
+    overflow: hidden; /* 隱藏超出邊界的內容 */
+}
 }
 
 /* 底部 */
@@ -376,7 +599,7 @@ footer {
 .social-icons {
     display: flex; /* Use flexbox for social icons */
     align-items: center; /* Aligns icons vertically */
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .social-icons a {
@@ -395,9 +618,13 @@ footer {
     display: flex;
     flex-direction: column; /* Aligns the texts vertically */
 }
+@media (max-width: 800px) {
+.footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Optional: Ensuring consistent vertical alignment */
-.footer-left p {
-    margin: 200; /* Removes default margin to avoid spacing issues */
+.footer {
+        width: 80%; /* 設定每個項目寬度為100% */
+    }
 }
-
