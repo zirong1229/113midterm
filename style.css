@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.8;
@@ -15,7 +16,8 @@ body {
 .nav-title a {
     color: inherit;          /* 使用父元素的顏色 */
     text-decoration: none;/* 移除底線 */
-	font-family:serif ;
+    font-family:serif ;
+
 
 }
 /* 大於 800px 的媒體查詢 */
@@ -23,33 +25,37 @@ body {
     label {
         display: none;
     }
-	
-	   	/* 隱藏 checkbox */
+   
+        /* 隱藏 checkbox */
     input[type="checkbox"] {
     display: none;
     }
-	.menu{
-		display: none;
-	}
+    .menu{
+        display: none;
+    }
+
 
     nav ul {
         display: flex;
         justify-content: flex-start;
     }
 
+
     nav ul li {
         position: relative;
     }
+
 
     nav ul li > ul {
         display: none;
         position: absolute;
     }
 
+
     nav ul li:hover > ul {
         display: block;
     }
-	/* 導覽列 */
+    /* 導覽列 */
 header {
     position: relative;
     max-width: 100%;
@@ -62,6 +68,7 @@ header {
     justify-content: center;
 }
 
+
 nav {
     width: 100%;
     background-color: #ccc;
@@ -72,6 +79,7 @@ nav {
     padding-left: 20px;
 }
 
+
 nav ul {
     display: flex;
     list-style: none;
@@ -81,10 +89,12 @@ nav ul {
     align-items: flex-end;
 }
 
+
 nav ul li {
     position: relative;
     margin: 0 5px;
 }
+
 
 nav ul li a {
     text-decoration: none;
@@ -95,6 +105,7 @@ nav ul li a {
     position: relative;
     transition: color 0.3s ease; /* 加入過渡效果 */
 }
+
 
 /* Hover 畫線動畫 */
 nav ul li a::after {
@@ -110,9 +121,11 @@ nav ul li a::after {
     transition: width 0.3s ease; /* 畫線動畫效果 */
 }
 
+
 nav ul li a:hover::after {
     width: 80%; /* 畫線展開至 80% */
 }
+
 
 /* 子選單 */
 nav ul li > ul {
@@ -126,9 +139,11 @@ nav ul li > ul {
     min-width: 100px;
 }
 
+
 nav ul li:hover > ul {
     display: block;
 }
+
 
 nav ul li ul li {
     background-color: white;
@@ -137,14 +152,17 @@ nav ul li ul li {
     white-space: nowrap;
 }
 
+
 nav ul li ul li a {
     color: #333;
     text-decoration: none;
 }
 
+
 nav ul li ul li:hover {
     background-color: #ddd;
 }
+
 
 .nav-title {
     position: absolute;
@@ -157,7 +175,10 @@ nav ul li ul li:hover {
     text-align: center;
 }
 
+
 }
+
+
 
 
 /* 小於 800px 的媒體查詢 */
@@ -165,25 +186,27 @@ nav ul li ul li:hover {
     label {
         display: block;
     }
-	
-   	/* 隱藏 checkbox */
+   
+    /* 隱藏 checkbox */
     input[type="checkbox"] {
     display: none;
     }
-	.dropdown-menu{
-		display: none;
-	}
+    .dropdown-menu{
+        display: none;
+    }
+
 
     nav ul li {
         width: 100%;
     }
 
+
     nav ul li a {
         padding: 10px 20px;
         text-align: left;
     }
-	
-	nav {
+   
+    nav {
   background: #ccc;
   box-shadow: 0px 1px 3px #00000088;
 }
@@ -198,10 +221,12 @@ nav h1 {
   line-height: 50px;
 }
 
+
 /* 隱藏 checkbox */
 input {
   display: none;
 }
+
 
 /* 漢堡按鈕 */
 label {
@@ -214,6 +239,7 @@ label img {
   width: 30px;
   vertical-align: middle;
 }
+
 
 /* menu*/
 .menu {
@@ -236,6 +262,7 @@ label img {
   color: #fff;
 }
 
+
 /* 下拉選單效果 */
 .menu {
   max-height: 0;
@@ -244,15 +271,18 @@ label img {
   /* 動畫秒數 */
 }
 
+
 input:checked ~ .menu {
   max-height: 900px;
 }
+
 
 /* mediaquery */
 @media screen and (min-width: 800px) {
   label {
     display: none;
   }
+
 
   .menu {
     float: right;
@@ -267,83 +297,38 @@ input:checked ~ .menu {
     padding: 0 15px;
   }
 }
-	
+   
 }
+
 
 /* 間距 */
 .spacer {
     height: 45px;
     background-color: #FFFFFF;
 }
-@media (max-width: 500px) {
-	/* 主標題橫幅 */
-.main-banner {
-    height: 200px;
-}
 
-.main-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 圖片自動輪播 */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    animation: slide-animation 15s infinite;
-}
-
-.slide:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.slide:nth-child(2) {
-    animation-delay: 5s;
-}
-
-.slide:nth-child(3) {
-    animation-delay: 10s;
-}
-	
-}
-@media (min-width: 500px) {
 
 /* 主標題橫幅 */
 .main-banner {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* 確保上下的區域是白色 */
-    overflow: hidden; /* 隱藏圖片溢出的部分 */
+    height: 600px;
 }
+
 
 .main-banner img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
+
 
 /* 圖片自動輪播 */
 .carousel {
     position: relative;
     width: 100%;
-    height: 400px;
-    overflow: hidden; /* 隱藏超出範圍的圖片部分 */
+    height: 500px;
+    overflow: hidden;
 }
+
 
 .slide {
     position: absolute;
@@ -355,18 +340,22 @@ input:checked ~ .menu {
     animation: slide-animation 15s infinite;
 }
 
+
 .slide:nth-child(1) {
     animation-delay: 0s;
 }
+
 
 .slide:nth-child(2) {
     animation-delay: 5s;
 }
 
+
 .slide:nth-child(3) {
     animation-delay: 10s;
 }
-}
+
+
 @keyframes slide-animation {
     0% { opacity: 0; }
     10% { opacity: 1; }
@@ -374,24 +363,59 @@ input:checked ~ .menu {
     40% { opacity: 0; }
     100% { opacity: 0; }
 }
-/* 間距 */
-.spacer {
-    height: 45px;
-    background-color: #FFFFFF;
-}
 
 
 /* 隱藏 radio 按鈕 */
+.carousel input[type="radio"] {
+    display: none;
+}
+
 
 /* 顯示不同圖片的選擇 */
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
 
 /* 底部圓點導航 */
+.nav {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+
+.nav label {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+input[type="radio"]#slide1:checked ~ .nav label[for="slide1"],
+input[type="radio"]#slide2:checked ~ .nav label[for="slide2"],
+input[type="radio"]#slide3:checked ~ .nav label[for="slide3"] {
+    background-color: #333;
+}
+
 
 /* 當視窗寬度大於 800px*/
 @media (min-width: 800px) {
-	/* 促銷區域的容器 */
+    /* 促銷區域的容器 */
 .offers {
-	padding-top:20px;
+    padding-top:20px;
     display: flex;
     justify-content: space-around;
     background-color: #FFFFFF;
@@ -400,17 +424,20 @@ input:checked ~ .menu {
     margin-bottom: -7%; /* 減少底部的間距 */
 }
 
+
 /* 每個促銷項目的樣式 */
 .offer {
     width: 450px;
     text-align: center;
 }
 
+
 /* 促銷標題的樣式 */
 .offer h4 {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+
 
 /* 促銷圖片佔位符的樣式 */
 .offer-image {
@@ -423,12 +450,14 @@ input:checked ~ .menu {
     border: 1px solid #999;
     transition: transform 0.3s ease-in-out; /* 平滑過渡效果 */
 }
+
 
 /* 滑鼠懸停時放大 */
 .offer-image:hover {
     transform: scale(1.1); /* 放大 10% */
 }
 
+
 /* button初始樣式 */
 button {
     padding: 0.5rem 1rem;
@@ -444,6 +473,7 @@ button {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 增加輕微陰影 */
 }
 
+
 /* 滑鼠懸停時漸層移動和陰影強化 */
 button:hover {
     background-position: right; /* 漸層從左移到右 */
@@ -451,34 +481,39 @@ button:hover {
 }
 }
 
+
 /* 當視窗寬度小於 800px,圖片垂直排列*/
 @media (max-width: 800px) {
-	/* 促銷區域的容器 */
+    /* 促銷區域的容器 */
 .offers {
     display: flex;
     justify-content: space-around;
     background-color: #FFFFFF;
     max-width: 100%;
     margin: 0 auto;
-  
+ 
 }
-	    .offers {
+        .offers {
         flex-direction: column;
         align-items: center;
     }
+
 
     .offers,
     .offer {
         width: 80%; /* 設定每個項目寬度為100% */
     }
 
+
 /* 每個促銷項目的樣式 */
 .offer {
     width: 80%;
-	height: 35%;
+    height: 35%;
     text-align: center;
     padding: 20px;
 }
+
+
 
 
 /* 促銷標題的樣式 */
@@ -486,6 +521,7 @@ button:hover {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+
 
 /* 促銷圖片佔位符的樣式 */
 .offer-image {
@@ -499,10 +535,12 @@ button:hover {
     transition: transform 0.3s ease-in-out; /* 平滑過渡效果 */
 }
 
+
 /* 滑鼠懸停時放大 */
 .offer-image:hover {
     transform: scale(1.01); /* 放大 10% */
 }
+
 
 /* button初始樣式 */
 button {
@@ -519,12 +557,14 @@ button {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 增加輕微陰影 */
 }
 
+
 /* 滑鼠懸停時漸層移動和陰影強化 */
 button:hover {
     background-position: right; /* 漸層從左移到右 */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* 加強陰影效果 */
 }
 }
+
 
 /* 營業時間區塊 */
 @media (min-width: 800px) {
@@ -538,7 +578,7 @@ button:hover {
 }
 /* 營業時間的兩個內容盒子 */
 .open {
-	max-width: 400px;
+    max-width: 400px;
     width: 60%;
     height: 50%;
     background-color:  #EBEBEB;
@@ -546,18 +586,21 @@ button:hover {
     background-position: center;
     padding-top:30px;
     padding-bottom: 30px;
-	padding-left: 15px;
-	padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     border: 0px solid #999;
 }
 
+
 }
+
 
 @media (max-width: 800px) {
 .opening {
         flex-direction: column;
         align-items: center;
     }
+
 
 .open {
         width: 80%; /* 設定每個項目寬度為100% */
@@ -585,11 +628,13 @@ button:hover {
 }
 }
 
+
 /* 底部 */
 footer {
     background-color: #f0f0f0;
     padding: 20px;
 }
+
 
 .footer-content {
     display: flex;
@@ -597,15 +642,18 @@ footer {
     align-items: center; /* Aligns items vertically */
 }
 
+
 .footer-left {
     text-align: left; /* Aligns text to the left */
 }
+
 
 .footer-left p {
     margin-bottom: 5px;
     font-size: 14px;
     margin-right: 10cm;
 }
+
 
 /* Adjustments for social icons */
 .social-icons {
@@ -614,9 +662,11 @@ footer {
     padding-top: 10px;
 }
 
+
 .social-icons a {
     margin: 0 10px;
 }
+
 
 /* Set a fixed height for icons */
 .social-icons img {
@@ -624,6 +674,7 @@ footer {
     height: 36px; /* Set a fixed height for the icons */
     display: block; /* Ensures there are no gaps */
 }
+
 
 /* Footer left section adjustment to ensure proper spacing */
 .footer-left {
@@ -636,7 +687,7 @@ footer {
         align-items: center;
     }
 
+
 .footer {
         width: 80%; /* 設定每個項目寬度為100% */
     }
-}
